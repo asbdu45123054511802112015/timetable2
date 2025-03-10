@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timetable Program</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 3px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #3498db;
+    }
+    td{
+      background-color: #800080;
+  </style>
+</head>
+<body>
+  <h1>Timetable Program</h1>
+  <table id="timetable" >
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+      </tr>
+    </thead>
+    <tbody id="timetable-body">
+      <!-- timetable data will be inserted here -->
+    </tbody>
+  </table>
+
+  <script>
+    const timetableData = [
+      {
+        time: "9:00-10:00",
+        monday: "Math",
+        tuesday: "Science",
+        wednesday: "English",
+        thursday: "History",
+        friday: "Geography"
+      },
+      {
+        time: "10:00-11:00",
+        monday: "Physics",
+        tuesday: "Chemistry",
+        wednesday: "Biology",
+        thursday: "Computer Science",
+        friday: "Art"
+      },
+      {
+        time: "11:00-11:30",
+        monday: "Break",
+        tuesday: "Break",
+        wednesday: "Break",
+        thursday: "Break",
+        friday: "Break"
+      },
+      {
+        time: "11:30-12:30",
+        monday: "Maths",
+        tuesday: "Geography",
+        wednesday: "Biology",
+        thursday: "Art",
+        friday: "Physics"
+      },
+      {
+        time: "12:30-01:30",
+        monday: "Lunch",
+        tuesday: "Lunch",
+        wednesday: "Lunch",
+        thursday: "Lunch",
+        friday: "Lunch"
+      },
+      {
+        time: "01:30-02:30",
+        monday: "Physics",
+        tuesday: "Maths",
+        wednesday: "Chemistry",      
+        thursday: "Goegraphy",
+         friday: "History"
+      },
+      {
+        time: "02:30-03:30",
+        monday: "Maths",
+        tuesday:  "Chemistry",       
+        wednesday: "Goegraphy", 
+        thursday: "Goegraphy",
+         friday: "History"
+      },
+
+    ];
+
+    const timetableBody = document.getElementById("timetable-body");
+
+    timetableData.forEach((period) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${period.time}</td>
+        <td>${period.monday}</td>
+        <td>${period.tuesday}</td>
+        <td>${period.wednesday}</td>
+        <td>${period.thursday}</td>
+        <td>${period.friday}</td>
+      `;
+      timetableBody.appendChild(row);
+    });
+  </script>
+</body>
+</html>
